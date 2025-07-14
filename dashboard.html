@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candidate Dashboard - AI HR Screening Bot</title>
+    <link href="./css/tailwind.css" rel="stylesheet">
+    <link href="./css/styles.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+    <header class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 py-4 sm:px-6 lg:px-8 flex justify-between items-center">
+            <h1 class="text-xl font-bold text-indigo-600">AI HR Screening Bot</h1>
+            <nav>
+                <a href="index.html" class="text-gray-600 hover:text-indigo-600 px-3 py-2">Home</a>
+                <a href="interview.html" class="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700">Start Screening</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 py-8">
+        <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">Upload Your Resume</h2>
+            <div id="upload-container" class="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center cursor-pointer hover:border-indigo-400 transition duration-200">
+                <div id="drop-area" class="flex flex-col items-center justify-center">
+                    <svg class="w-12 h-12 text-gray-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+                    </svg>
+                    <p class="text-gray-600 mb-2">Drag and drop your resume here</p>
+                    <p class="text-gray-500 text-sm mb-4">or</p>
+                    <label for="file-input" class="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 cursor-pointer">
+                        Select File
+                    </label>
+                    <input id="file-input" type="file" accept=".pdf,.doc,.docx" class="hidden">
+                </div>
+            </div>
+            <div id="file-info" class="mt-4 hidden">
+                <p class="text-gray-600">Selected file: <span id="file-name" class="font-medium"></span></p>
+                <button id="parse-btn" class="mt-2 bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700">Parse Resume</button>
+            </div>
+        </div>
+
+        <div id="resume-data" class="bg-white rounded-lg shadow-md p-6 hidden">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">Your Resume Data</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="text-lg font-semibold mb-3 text-gray-700">Personal Information</h3>
+                    <div id="personal-info" class="space-y-2"></div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-3 text-gray-700">Skills</h3>
+                    <div id="skills-list" class="flex flex-wrap gap-2"></div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-3 text-gray-700">Experience</h3>
+                    <div id="experience-list" class="space-y-4"></div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-3 text-gray-700">Education</h3>
+                    <div id="education-list" class="space-y-2"></div>
+                </div>
+            </div>
+            <div class="mt-8 text-center">
+                <a href="interview.html" class="bg-indigo-600 text-white px-6 py-3 rounded-md hover:bg-indigo-700 inline-block">Proceed to AI Screening</a>
+            </div>
+        </div>
+    </main>
+
+    <script src="./js/parser.js"></script>
+    <script src="./js/utils.js"></script>
+</body>
+</html>
