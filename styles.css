@@ -1,0 +1,71 @@
+/* Custom styles that complement Tailwind */
+#upload-container {
+    transition: all 0.3s ease;
+}
+
+#upload-container:hover {
+    border-color: #818cf8;
+}
+
+.chat-message {
+    max-width: 80%;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.ai-message {
+    background-color: #f3f4f6;
+    margin-right: auto;
+}
+
+.user-message {
+    background-color: #6366f1;
+    color: white;
+    margin-left: auto;
+}
+
+.skill-tag {
+    display: inline-block;
+    background-color: #e0e7ff;
+    color: #4338ca;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.experience-item {
+    border-left: 3px solid #6366f1;
+    padding-left: 1rem;
+}
+
+/* Animation for chat messages */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.chat-message {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Custom scrollbar for chat container */
+#chat-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+#chat-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+#chat-container::-webkit-scrollbar-thumb {
+    background: #c7d2fe;
+    border-radius: 4px;
+}
+
+#chat-container::-webkit-scrollbar-thumb:hover {
+    background: #a5b4fc;
+}
